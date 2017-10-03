@@ -29,8 +29,16 @@ $(document).ready(() => {
 
     if($(window).innerWidth() < 800) {
       headerHeight = 80;
+      $('#guide .panel').off('mouseover');
+      $('#identify .wrapper').off('mouseover');
+      clickHandler('#guide .panel', 'click');
+      clickHandler('#identify .wrapper', 'click');
     } else {
       headerHeight = 90;
+      $('#guide .panel').off('click');
+      $('#identify .wrapper').off('click');
+      clickHandler('#guide .panel', 'mouseover');
+      clickHandler('#identify .wrapper', 'mouseover');
     }
   });
 
@@ -40,37 +48,40 @@ $(document).ready(() => {
 
   $('body').on('wheel', function(event) {
     const scrollPosition = ($(window).scrollTop() + headerHeight) / $(window).innerHeight();
- // console.log(scrollPosition, currentPage);
-      switch(true) {
-        // case (scrollPosition < 3.75):
-        //   $('.footer').removeClass('show');
-        // break;
-        case (scrollPosition > 0 && scrollPosition < 0.5):
-          currentPage = 'home';
-          showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
-        break;
-         case (scrollPosition > 0.5 && scrollPosition < 1.4):
-          currentPage = 'about';
-          showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
-        break;
-         case (scrollPosition > 1.4 && scrollPosition < 2.3):
-          currentPage = 'identify';
-          showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
-        break;
-         case (scrollPosition > 2.3 && scrollPosition < 3.2):
-          currentPage = 'guide';
-          showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
-        break;
-         case (scrollPosition > 3.2 && scrollPosition < 3.75):
-          currentPage = 'grow';
-          showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
-        break;
-         case (scrollPosition > 3.75):
-          currentPage = 'contact';
-          $('.footer').addClass('show');
-          showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
-        break;
-      }
+    let footerVisiblePos;
+
+    if($(window).innerWidth() < 800) {
+      footerVisiblePos = 5.99;
+    } else {
+      footerVisiblePos = 3.75;
+    }
+
+    switch(true) {
+      case (scrollPosition > 0 && scrollPosition < 0.5):
+        currentPage = 'home';
+        showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
+      break;
+       case (scrollPosition > 0.5 && scrollPosition < 1.4):
+        currentPage = 'about';
+        showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
+      break;
+       case (scrollPosition > 1.4 && scrollPosition < 2.3):
+        currentPage = 'identify';
+        showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
+      break;
+       case (scrollPosition > 2.3 && scrollPosition < 3.2):
+        currentPage = 'guide';
+        showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
+      break;
+       case (scrollPosition > 3.2 && scrollPosition < 3.75):
+        currentPage = 'grow';
+        showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
+      break;
+       case (scrollPosition > footerVisiblePos):
+        currentPage = 'contact';
+        showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
+      break;
+    }
   });
 
   const showSelectedLink = (currentLink) => {
@@ -128,4 +139,24 @@ $(document).ready(() => {
 
     showSelectedLink($(e.target));
   });
+
+  const clickHandler = (ele, event) => {
+    $(ele).on(event, (e) => {
+      if(event === 'mouseover') {
+        $(e.target).on('mouseleave', (e) => {
+          $(e.target).removeClass('active');
+        });
+      }
+
+      let reset = false;
+      if($(e.target).hasClass('active')) {
+        reset = true;
+      }
+      $(ele).removeClass('active');
+
+      if(reset === false) {
+        $(e.target).addClass('active');
+      }
+    });
+  }
 });
