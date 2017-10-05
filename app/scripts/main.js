@@ -10,10 +10,12 @@ $(document).ready(() => {
     if(burger.hasClass('burger--active')) {
       nav.removeClass('nav_open');
       burger.removeClass('burger--active');
+      $('.arrow').css({'display': 'block'});
     } 
     else {
       burger.addClass('burger--active');
       nav.addClass('nav_open');
+      $('.arrow').css({'display': 'none'});
     }
   }
 
@@ -22,6 +24,7 @@ $(document).ready(() => {
   });
 
   $(window).on('resize load', () => {
+
     if(window.innerWidth > 1000 && nav.hasClass('nav_open')) {
       navControl();
       nav.removeClass('nav_open');
@@ -29,21 +32,21 @@ $(document).ready(() => {
 
     if($(window).innerWidth() < 800) {
       headerHeight = 80;
-      $('#guide .panel').off('mouseover');
-      $('#identify .wrapper').off('mouseover');
       clickHandler('#guide .panel', 'click');
       clickHandler('#identify .wrapper', 'click');
+      $('#guide .panel').off('mouseover');
+      $('#identify .wrapper').off('mouseover');
     } else {
       headerHeight = 90;
-      $('#guide .panel').off('click');
-      $('#identify .wrapper').off('click');
       clickHandler('#guide .panel', 'mouseover');
       clickHandler('#identify .wrapper', 'mouseover');
+      $('#guide .panel').off('click');
+      $('#identify .wrapper').off('click');
     }
   });
 
   $(window).on('load', () => {
-    $('.nav_link').get(0).click();
+    $('#companyName').click();
   });
 
   $('body').on('wheel', function(event) {
@@ -89,6 +92,11 @@ $(document).ready(() => {
       $(ele).removeClass('selected');
     });
     currentLink.addClass('selected');
+    if(currentLink.attr('data-index') === 'contact') {
+      $('.arrow').css({'transform': 'rotate(180deg) translateX(-50%)'});
+    } else {
+      $('.arrow').css({'transform': 'rotate(0deg) translateX(-50%)'});
+    }
   }
 
   $('.arrow').click(() => {
@@ -114,8 +122,12 @@ $(document).ready(() => {
       break;
     }
 
-    $(`.nav_link[data-index=${nextPage}]`).click();
-    showSelectedLink($(`.nav_link[data-index=${nextPage}]`));
+    if(nextPage === 'home') {
+      $('#companyName').click();
+    } else {
+      $(`.nav_link[data-index=${nextPage}]`).click();
+      showSelectedLink($(`.nav_link[data-index=${nextPage}]`));
+    }
   });
 
   $('.nav_link').click((e) => {
@@ -126,6 +138,7 @@ $(document).ready(() => {
     if(burger.hasClass('burger--active')) {
       nav.removeClass('nav_open');
       burger.removeClass('burger--active');
+      $('.arrow').css({'display': 'block'});
     } 
 
     $('html, body').animate({
@@ -152,6 +165,7 @@ $(document).ready(() => {
       if($(e.target).hasClass('active')) {
         reset = true;
       }
+      
       $(ele).removeClass('active');
 
       if(reset === false) {
