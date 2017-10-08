@@ -588,7 +588,7 @@ html, body {
           }
         }
         @include breakpoint(desktop) {
-          height: 30%;
+          height: 20vw;
 
           .icon {
             transform: translate(-50%, -200%) scale(0.75);
@@ -609,7 +609,7 @@ html, body {
           }
         }
         @include breakpoint(lrg-desktop) {
-          height: 20%;
+          // height: 25vw;
         }
       }
 
@@ -977,10 +977,9 @@ html, body {
         }
 
         &:after {
-          will-change: top, transform;
+          will-change: top, transform, padding-top;
           color: $white;
           display: block;
-          padding-top: 6rem;
           left: 50%;
           white-space: nowrap;
           position: absolute;
@@ -993,9 +992,11 @@ html, body {
           @include breakpoint(mobile) {
             top: -50px;
             font-size: 1rem;
+            padding-top: 6rem;
           }
           @include breakpoint(desktop) {
             top: 0;
+            padding-top: 5.25rem;
           }
         }
       }
@@ -1072,6 +1073,10 @@ html, body {
 }
 
 #grow {
+  transition: padding-bottom 1s ease-out;
+  z-index: 1;
+  pointer-events: none;
+
   .wrapper:first-child {
     height: 100%;
     background-image: linear-gradient(
@@ -1081,8 +1086,6 @@ html, body {
     background-position: center;
     background-size: cover;
   }
-  transition: padding-bottom 1s ease-out;
-  z-index: 1;
   
   @include breakpoint(mobile) {
    padding-bottom: calc(100vh - 80px);
@@ -1102,12 +1105,8 @@ html, body {
 
 .arrow {
   @include breakpoint(mobile) {
-    height: 35px;
-    width: 35px;
-  }
-  @include breakpoint(tablet) {
-    height: 40px;
-    width: 40px;
+    height: 0px;
+    width: 0px;
   }
   @include breakpoint(desktop) {
     height: 50px;

@@ -32,16 +32,8 @@ $(document).ready(() => {
 
     if($(window).innerWidth() < 800) {
       headerHeight = 80;
-      clickHandler('#guide .panel', 'click');
-      clickHandler('#identify .wrapper', 'click');
-      $('#guide .panel').off('mouseover');
-      $('#identify .wrapper').off('mouseover');
     } else {
       headerHeight = 90;
-      clickHandler('#guide .panel', 'mouseover');
-      clickHandler('#identify .wrapper', 'mouseover');
-      $('#guide .panel').off('click');
-      $('#identify .wrapper').off('click');
     }
   });
 
@@ -155,7 +147,7 @@ $(document).ready(() => {
 
   const clickHandler = (ele, event) => {
     $(ele).on(event, (e) => {
-      if(event === 'mouseover') {
+      if(event === 'mouseenter') {
         $(e.target).on('mouseleave', (e) => {
           $(e.target).removeClass('active');
         });
@@ -164,6 +156,7 @@ $(document).ready(() => {
       let reset = false;
       if($(e.target).hasClass('active')) {
         reset = true;
+        $(e.target).removeClass('active');
       }
       
       $(ele).removeClass('active');
@@ -173,4 +166,8 @@ $(document).ready(() => {
       }
     });
   }
+
+  let eventType = ('ontouchstart' in window) ? 'click' : 'mouseenter';
+  clickHandler('#guide .panel', eventType);
+  clickHandler('#identify .wrapper', eventType);
 });
