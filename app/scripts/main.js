@@ -1,3 +1,8 @@
+// import 'lazysizes/plugins/attrchange/ls.attrchange';
+// import 'lazysizes/plugins/respimg/ls.respimg';
+// import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+// import 'lazysizes';
+
 $(document).ready(() => {
   const burger = $('#main-burger');
   const nav = $('#mainNav');
@@ -55,26 +60,32 @@ $(document).ready(() => {
       case (scrollPosition > 0 && scrollPosition < 0.5):
         currentPage = 'home';
         showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
+        tease(true)
       break;
        case (scrollPosition > 0.5 && scrollPosition < 1.4):
         currentPage = 'about';
         showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
+        tease(false)
       break;
        case (scrollPosition > 1.4 && scrollPosition < 2.3):
         currentPage = 'identify';
         showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
+        tease(false)
       break;
        case (scrollPosition > 2.3 && scrollPosition < 3.2):
         currentPage = 'guide';
         showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
+        tease(false)
       break;
        case (scrollPosition > 3.2 && scrollPosition < 3.75):
         currentPage = 'grow';
         showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
+        tease(false)
       break;
        case (scrollPosition > footerVisiblePos):
         currentPage = 'contact';
         showSelectedLink($(`.nav_link[data-index=${currentPage}]`));
+        tease(false)
       break;
     }
   });
@@ -91,26 +102,42 @@ $(document).ready(() => {
     }
   }
 
+  const tease = (hideShow) => {
+    if(hideShow && !$('.arrow__tease').hasClass('arrow__tease--show')) {
+      $('.arrow__tease').removeClass('arrow__tease--hide');
+      $('.arrow__tease').addClass('arrow__tease--show');
+    } else if(!hideShow && !$('.arrow__tease').hasClass('arrow__tease--hide')) {
+      $('.arrow__tease').removeClass('arrow__tease--show');
+      $('.arrow__tease').addClass('arrow__tease--hide');
+    }
+  }
+
   $('.arrow').click(() => {
 
     switch(currentPage) {
       case 'home':
         nextPage = 'about';
+        tease(false)
       break;
        case 'about':
         nextPage = 'identify';
+        tease(false)
       break;
        case 'identify':
         nextPage = 'guide';
+        tease(false)
       break;
        case 'guide':
         nextPage = 'grow';
+        tease(false)
       break;
        case 'grow':
         nextPage = 'contact';
+        tease(false)
       break;
        case 'contact':
         nextPage = 'home';
+        tease(true)
       break;
     }
 
@@ -145,29 +172,29 @@ $(document).ready(() => {
     showSelectedLink($(e.target));
   });
 
-  const clickHandler = (ele, event) => {
-    $(ele).on(event, (e) => {
-      if(event === 'mouseenter') {
-        $(e.target).on('mouseleave', (e) => {
-          $(e.target).removeClass('active');
-        });
-      }
+  // const clickHandler = (ele, event) => {
+  //   $(ele).on(event, (e) => {
+  //     if(event === 'mouseenter') {
+  //       $(e.target).on('mouseleave', (e) => {
+  //         $(e.target).removeClass('active');
+  //       });
+  //     }
 
-      let reset = false;
-      if($(e.target).hasClass('active')) {
-        reset = true;
-        $(e.target).removeClass('active');
-      }
+  //     let reset = false;
+  //     if($(e.target).hasClass('active')) {
+  //       reset = true;
+  //       $(e.target).removeClass('active');
+  //     }
       
-      $(ele).removeClass('active');
+  //     $(ele).removeClass('active');
 
-      if(reset === false) {
-        $(e.target).addClass('active');
-      }
-    });
-  }
+  //     if(reset === false) {
+  //       $(e.target).addClass('active');
+  //     }
+  //   });
+  // }
 
-  let eventType = ('ontouchstart' in window) ? 'click' : 'mouseenter';
-  clickHandler('#guide .panel', eventType);
-  clickHandler('#identify .wrapper', eventType);
+  // let eventType = ('ontouchstart' in window) ? 'click' : 'mouseenter';
+  // clickHandler('#guide .panel', eventType);
+  // clickHandler('#identify .wrapper', eventType);
 });

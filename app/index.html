@@ -1,226 +1,312 @@
 <!doctype html>
 <html lang="">
-  <head>
-    <title>Almoayed Technologies</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="Almoayed Technologies">
-    <meta property="og:site_name" content="Almoayed Technologies">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="images/manifest.json">
-    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
-    <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body>
-    <!--[if IE]>
+
+<head>
+  <title>Almoayed Technologies</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Almoayed Technologies">
+  <meta property="og:site_name" content="Almoayed Technologies">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="images/manifest.json">
+  <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+
+<body>
+  <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div id="header">
-      <div>
-        <button id="main-burger" class="burger">
-          <span class="burger__piece"></span>
-          <span class="burger__piece"></span>
-          <span class="burger__piece"></span>
-        </button>
-
-        <nav id="mainNav">
-          <a class="nav_link" data-index="about"><span>About</span></a>
-          <a class="nav_link" data-index="identify"><span>Identify</span></a>
-          <a class="nav_link" data-index="guide"><span>Guide</span></a>
-          <a class="nav_link" data-index="grow"><span>Grow</span></a>
-          <a class="nav_link" data-index="contact"><span>Contact</span></a>
-        </nav>
-      </div>
- 
-      <a class="nav_link">
-        <div id="companyName" data-index="home"></div>
-      </a>
+  <div id="header">
+    <div>
+      <button id="main-burger" class="burger">
+        <span class="burger__piece"></span>
+        <span class="burger__piece"></span>
+        <span class="burger__piece"></span>
+      </button>
+      <nav id="mainNav">
+        <a class="nav_link" data-index="about"><span>About</span></a>
+        <a class="nav_link" data-index="identify"><span>Identify</span></a>
+        <a class="nav_link" data-index="guide"><span>Guide</span></a>
+        <a class="nav_link" data-index="grow"><span>Grow</span></a>
+        <a class="nav_link" data-index="contact"><span>Contact</span></a>
+      </nav>
     </div>
-
-    <div class="arrow"></div>
-
-    <section class="page" id="home">
-      <div class="background_wrapper"></div>
-      <div class="background_wrapper"></div>
-      <div class="logo"></div>
-      <div class="tagline"></div>
-    </section>
-    <section class="page" id="about">
+    <a class="nav_link">
+      <div id="companyName" data-index="home"></div>
+    </a>
+  </div>
+  <div class="arrow">
+    <span class='arrow__tease'>Find out more</span>
+    <img class='arrow__graphic' src='images/downArrow.svg' />
+  </div>
+  <section class="page" id="home">
+    <div class='home-hero'>
+      <div class='home-hero__image'>
+        <img
+          src='images/west/west_tdocot_c_scale,w_1524.jpg'
+          src-set="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAMDAwMDAwQEBAQFBQUFBQcHBgYHBwsICQgJCAsRCwwLCwwLEQ8SDw4PEg8bFRMTFRsfGhkaHyYiIiYwLTA+PlQBAwMDAwMDBAQEBAUFBQUFBwcGBgcHCwgJCAkICxELDAsLDAsRDxIPDg8SDxsVExMVGx8aGRofJiIiJjAtMD4+VP/CABEIAAwAEgMBIgACEQEDEQH/xAAWAAEBAQAAAAAAAAAAAAAAAAAGBwT/2gAIAQEAAAAAdC5TKswL/8QAFQEBAQAAAAAAAAAAAAAAAAAAAwX/2gAIAQIQAAAAtN//xAAVAQEBAAAAAAAAAAAAAAAAAAACBf/aAAgBAxAAAACE/wD/xAAjEAACAgICAgIDAQAAAAAAAAABAgMEBREAEgYhBzETIkFx/9oACAEBAAE/AEk+J56n4q11u8UamRhWZkT1v9mTetD75Zj8Nv07U9DNUTDB2Ekj91VCp0exI0OTYCgZpCL1NgXbTKHIPv7BA54bkstYyNyscjcSClI15I4pTEHmTSAuU0SOo1rnl/yl5VZyGQxVg05q7mvMe9dSRJMOzOP4G963yfJX1mkAnIAdtAInr3/nP//EAB4RAAICAQUBAAAAAAAAAAAAAAECAwQAERVBktHh/9oACAECAQE/AGv3KbpHHIWGgJL+Zutg8r0+5//EACIRAAECAwkAAAAAAAAAAAAAAAMBAgAEBQYTFiFBQoGS4f/aAAgBAwEBPwBlkqVOteYw1Gu1BO51jC0kmV6fv5H/2Q=="
+          data-srcset="images/west/west_tdocot_c_scale,w_1524.jpg 1524w 1017h,
+            images/west/west_tdocot_c_scale,w_190.jpg 190w,
+            images/west/west_tdocot_c_scale,w_540.jpg 540w,
+            images/west/west_tdocot_c_scale,w_765.jpg 765w,
+            images/west/west_tdocot_c_scale,w_948.jpg 948w,
+            images/west/west_tdocot_c_scale,w_1119.jpg 1119w,
+            images/west/west_tdocot_c_scale,w_1258.jpg 1258w,
+            images/west/west_tdocot_c_scale,w_1396.jpg 1396w,
+            images/west/west_tdocot_c_scale,w_1642.jpg 1642w,
+            images/west/west_tdocot_c_scale,w_1754.jpg 1754w,
+            images/west/west_tdocot_c_scale,w_1871.jpg 1871w,
+            images/west/west_tdocot_c_scale,w_1984.jpg 1984w,
+            images/west/west_tdocot_c_scale,w_2083.jpg 2083w,
+            images/west/west_tdocot_c_scale,w_2181.jpg 2181w,
+            images/west/west_tdocot_c_scale,w_2286.jpg 2286w,
+            images/west/west_tdocot_c_scale,w_2385.jpg 2385w,
+            images/west/west_tdocot_c_scale,w_2479.jpg 2479w,
+            images/west/west_tdocot_c_scale,w_2555.jpg 2555w,
+            images/west/west_tdocot_c_scale,w_2560.jpg 2560w 1708h"
+          data-sizes="auto"
+          class="lazyload"
+        />
+      </div>      
+      <div class='home-hero__image'>
+        <img
+          src='images/east/east,w_1499.jpg'}
+          src-set="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAMDAwMDAwQEBAQFBQUFBQcHBgYHBwsICQgJCAsRCwwLCwwLEQ8SDw4PEg8bFRMTFRsfGhkaHyYiIiYwLTA+PlQBAwMDAwMDBAQEBAUFBQUFBwcGBgcHCwgJCAkICxELDAsLDAsRDxIPDg8SDxsVExMVGx8aGRofJiIiJjAtMD4+VP/CABEIAAwAEgMBIgACEQEDEQH/xAAXAAEAAwAAAAAAAAAAAAAAAAAHAwUG/9oACAEBAAAAABqggyCOQ//EABUBAQEAAAAAAAAAAAAAAAAAAAQG/9oACAECEAAAAH1n/8QAFAEBAAAAAAAAAAAAAAAAAAAABv/aAAgBAxAAAABIW//EACQQAAICAQMDBQEAAAAAAAAAAAEDAgQRAAUSEyEiBhQxUZIy/9oACAEBAAE/ABtdW2lrb1ynShGt1VSYZxDZZxwiePfSdujFQc0rWuceS+UhmY75EQM5I0YUASPcVv3rZd0v3be2Je6TAxq0GUvKQWe2BnOvUd2UdqbCCULCbkqqRFYHTUjxAj9Z+ZfZ0brc/wAw/Ov/xAAhEQAABAUFAAAAAAAAAAAAAAABBBExAAIDBQYHExZUkf/aAAgBAgEBPwA3qDkRO8FSdauu8grIwAzDHKbz2p/Aj//EACERAAAEBQUAAAAAAAAAAAAAAAABAgQDBQYRExYhMUFU/9oACAEDAQE/AGlB049l7hzBapLEjhZbmdr9DTUk8MIf/9k="
+          data-srcset="images/east/east,w_1622.jpg 1622w,
+            images/east/east,w_200.jpg 200w,
+            images/east/east,w_475.jpg 475w,
+            images/east/east,w_670.jpg 670w,
+            images/east/east,w_826.jpg 826w,
+            images/east/east,w_975.jpg 975w,
+            images/east/east,w_1113.jpg 1113w,
+            images/east/east,w_1245.jpg 1245w,
+            images/east/east,w_1368.jpg 1368w,
+            images/east/east,w_1499.jpg 1499w,
+            images/east/east,w_1730.jpg 1730w,
+            images/east/east,w_1842.jpg 1842w,
+            images/east/east,w_1944.jpg 1944w,
+            images/east/east,w_2060.jpg 2060w,
+            images/east/east,w_2162.jpg 2162w,
+            images/east/east,w_2261.jpg 2261w,
+            images/east/east,w_2368.jpg 2368w,
+            images/east/east,w_2472.jpg 2472w,
+            images/east/east,w_2522.jpg 2522w,
+            images/east/east,w_2560.jpg 2560w"
+          data-sizes="auto"
+          class="lazyload"
+        />
+      </div>
+    </div>
+    <div class='home-contents'>
+      <svg class="logo" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 141.7 253.5" width="100%" height="100%">
+        <path class="logo__a" d="M36.8 105.2l33.9-86 36.5 90h23.5L84.6 0H58.2l-53 124.5 31.6-19.3"/>
+        <path class="logo__t" d="M35 129.6h-.1l-.5.3-32.1 19 32.8-.6h14.5v105.2l21-13.1V129.7h-.3v-.1z"/>
+      </svg>
+      <div class="home-intro">
+        <svg class="home-intro__tagline tagline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212.32 18.44">
+          <title>Identify, Guide, Grow</title>
+          <g>
+            <g class="tagline__identify">
+              <path d="M2.66.66V14.9H0V.66z" />
+              <path d="M9.68 14.9a8.83 8.83 0 0 1-2.33-.26 3.18 3.18 0 0 1-1.5-.85 3.38 3.38 0 0 1-.8-1.54A9.44 9.44 0 0 1 4.83 10v-.88A9.3 9.3 0 0 1 5 6.92a3.58 3.58 0 0 1 .77-1.55 3.18 3.18 0 0 1 1.42-.9 7 7 0 0 1 2.2-.3 6.1 6.1 0 0 1 1.6.2 3 3 0 0 1 1.1.5V0h2.6v13a1.92 1.92 0 0 1-.47 1.45 2.5 2.5 0 0 1-1.68.43zm2.38-2.08V8.58A5.6 5.6 0 0 0 12 7.4a1.3 1.3 0 0 0-.37-.7 1.53 1.53 0 0 0-.72-.34 5.48 5.48 0 0 0-1.14-.1 5 5 0 0 0-1.16.1 1.24 1.24 0 0 0-.7.43 1.75 1.75 0 0 0-.32.85 10.08 10.08 0 0 0-.08 1.4v.87a9.9 9.9 0 0 0 .1 1.5 1.84 1.84 0 0 0 .33.87 1.24 1.24 0 0 0 .7.4 5 5 0 0 0 1.17.12z" />
+              <path d="M19.18 10.58a7.07 7.07 0 0 0 .08 1.18 1.2 1.2 0 0 0 1 1.08 5.44 5.44 0 0 0 1.16.1H25.22l-.4 2h-3.5a7.22 7.22 0 0 1-2.32-.32 3.16 3.16 0 0 1-2.2-2.4 8.54 8.54 0 0 1-.2-2v-1.1A9.16 9.16 0 0 1 16.8 7a3.57 3.57 0 0 1 .77-1.55A3.37 3.37 0 0 1 19 4.5a7.34 7.34 0 0 1 2.35-.32 7 7 0 0 1 2.2.3 3.58 3.58 0 0 1 1.4.8 2.9 2.9 0 0 1 .74 1.23 5.2 5.2 0 0 1 .3 1.56v.34a6.34 6.34 0 0 1-.08 1.1 1.53 1.53 0 0 1-.27.68.9.9 0 0 1-.5.32 2.9 2.9 0 0 1-.73.08zm2.16-4.44a4.53 4.53 0 0 0-1.1.1 1.24 1.24 0 0 0-.66.4 1.6 1.6 0 0 0-.32.8 8 8 0 0 0-.08 1.24h4.3v-.46a4.12 4.12 0 0 0-.1-1A1.34 1.34 0 0 0 23 6.6a1.43 1.43 0 0 0-.66-.35 4.23 4.23 0 0 0-1-.1z" />
+              <path d="M27.78 14.9V7.82a4.52 4.52 0 0 1 .28-1.68A2.55 2.55 0 0 1 28.92 5a3.85 3.85 0 0 1 1.48-.63 10 10 0 0 1 2.14-.2 6.17 6.17 0 0 1 3.6.83 3.26 3.26 0 0 1 1.14 2.8v7.1h-2.6V8.14a4.65 4.65 0 0 0-.06-.8 1.1 1.1 0 0 0-.27-.57 1.27 1.27 0 0 0-.64-.34 6.26 6.26 0 0 0-2.33 0 1.33 1.33 0 0 0-.65.34 1.07 1.07 0 0 0-.28.57 4.65 4.65 0 0 0-.06.8v6.76z" />
+              <path d="M45.2 14.9h-1.62a9.8 9.8 0 0 1-2.07-.18 2.63 2.63 0 0 1-1.27-.63 2.4 2.4 0 0 1-.65-1.22A8.42 8.42 0 0 1 39.4 11V2.08l2.6-.42V4.5h3.74l-.42 2.14H42v4.2a5.57 5.57 0 0 0 .07 1 1.17 1.17 0 0 0 .26.6 1 1 0 0 0 .54.27 4.65 4.65 0 0 0 .9.08h1.85z" />
+              <path d="M50 1.56a1.47 1.47 0 0 1-.34 1.1 2.35 2.35 0 0 1-2.4 0 1.47 1.47 0 0 1-.34-1.1 1.48 1.48 0 0 1 .36-1.08 2.3 2.3 0 0 1 2.4 0A1.48 1.48 0 0 1 50 1.56zM47.16 4.5h2.6v10.4h-2.6z" />
+              <path d="M56.88 2.14a5.9 5.9 0 0 0-1.12.1 1.48 1.48 0 0 0-.74.34 1.46 1.46 0 0 0-.4.72 5.5 5.5 0 0 0-.14 1.2h3.74l-.42 2.14h-3.32v8.26h-2.6V4.82a8.43 8.43 0 0 1 .26-2.26 3.25 3.25 0 0 1 .86-1.5 3.42 3.42 0 0 1 1.53-.8A9.33 9.33 0 0 1 56.86 0H59l-.42 2.14h-.86z" />
+              <path d="M60.46 16.32h3.3a5.14 5.14 0 0 0 1.14-.1 1.7 1.7 0 0 0 .77-.4 1.5 1.5 0 0 0 .43-.74 4.68 4.68 0 0 0 .13-1.2v-.2a4.1 4.1 0 0 1-.43.3 2.9 2.9 0 0 1-.54.25 3.82 3.82 0 0 1-.76.17 8.6 8.6 0 0 1-1.1.06 4.85 4.85 0 0 1-3-.77 3.1 3.1 0 0 1-1-2.64V4.5H62v6.08a5.6 5.6 0 0 0 0 .8 1.13 1.13 0 0 0 .24.57 1.18 1.18 0 0 0 .58.35 3.8 3.8 0 0 0 1.07.12 5.52 5.52 0 0 0 1.16-.1 1.37 1.37 0 0 0 .7-.34 1.27 1.27 0 0 0 .32-.62 4.26 4.26 0 0 0 .1-1V4.5h2.6v9.44a6.9 6.9 0 0 1-.2 2.06 3.08 3.08 0 0 1-.88 1.4 3.67 3.67 0 0 1-1.54.8 9 9 0 0 1-2.28.24h-2.6L60 18.4z" />
+            </g>
+            <path class="tagline__dash tagline__dash--first" d="M85.22 9.22l-9.1 3.5V10.5l6.48-2.4-6.48-2.4V3.48L85.22 7z" />
+            <g class="tagline__guide">
+              <path d="M103.62 7.2v5.7a2.47 2.47 0 0 1-.35 1.48 1.45 1.45 0 0 1-1.15.5h-3.54a10.68 10.68 0 0 1-3-.36 4.1 4.1 0 0 1-1.9-1.12 4.3 4.3 0 0 1-1-1.9 11.37 11.37 0 0 1-.3-2.76v-2a11.47 11.47 0 0 1 .3-2.68 4.16 4.16 0 0 1 1-1.93 4.52 4.52 0 0 1 2-1.16A10.8 10.8 0 0 1 98.8.62H103.13L102.76 3h-4.1a8.6 8.6 0 0 0-1.77.15 2 2 0 0 0-1.1.57 2.3 2.3 0 0 0-.52 1.18 11.5 11.5 0 0 0-.14 2v1.8a10.46 10.46 0 0 0 .16 2 2.43 2.43 0 0 0 .54 1.18 1.86 1.86 0 0 0 1 .54 8.62 8.62 0 0 0 1.65.13h2.5V9.32h-2.46L99 7.2z" />
+              <path d="M110.34 15.22a10.08 10.08 0 0 1-2.1-.2 3.84 3.84 0 0 1-1.47-.6 2.53 2.53 0 0 1-.87-1.13 4.57 4.57 0 0 1-.28-1.72V4.5h2.6v6.74a4.76 4.76 0 0 0 .06.8 1.1 1.1 0 0 0 .27.57 1.32 1.32 0 0 0 .64.36 4.43 4.43 0 0 0 1.14.12 4.3 4.3 0 0 0 1.14-.12 1.3 1.3 0 0 0 .63-.35 1.1 1.1 0 0 0 .28-.56 4.55 4.55 0 0 0 .06-.8V4.5H115v7.08a3.22 3.22 0 0 1-1.15 2.83 6.22 6.22 0 0 1-3.5.82z" />
+              <path d="M120 1.56a1.47 1.47 0 0 1-.34 1.1 2.35 2.35 0 0 1-2.4 0 1.47 1.47 0 0 1-.34-1.1 1.48 1.48 0 0 1 .34-1.08 2.3 2.3 0 0 1 2.4 0 1.48 1.48 0 0 1 .34 1.08zm-2.84 2.94h2.6v10.4h-2.6z" />
+              <path d="M126.54 14.9a8.83 8.83 0 0 1-2.33-.26 3.2 3.2 0 0 1-1.48-.85 3.38 3.38 0 0 1-.8-1.54 9.44 9.44 0 0 1-.24-2.3v-.84a9.3 9.3 0 0 1 .23-2.2 3.57 3.57 0 0 1 .78-1.55 3.18 3.18 0 0 1 1.42-.9 7 7 0 0 1 2.16-.3 6.1 6.1 0 0 1 1.57.2 3 3 0 0 1 1.1.5V0h2.6v13a1.93 1.93 0 0 1-.47 1.45 2.5 2.5 0 0 1-1.68.43zm2.38-2.08V8.58a5.58 5.58 0 0 0-.1-1.17 1.32 1.32 0 0 0-.37-.7 1.53 1.53 0 0 0-.72-.34 5.47 5.47 0 0 0-1.15-.1 5 5 0 0 0-1.16.1 1.25 1.25 0 0 0-.7.43 1.76 1.76 0 0 0-.32.85 10.08 10.08 0 0 0-.08 1.4v.87a10 10 0 0 0 .1 1.5 1.83 1.83 0 0 0 .33.87 1.24 1.24 0 0 0 .7.4 5 5 0 0 0 1.17.12z" />
+              <path d="M136 10.58a7.07 7.07 0 0 0 .08 1.18 1.2 1.2 0 0 0 1 1.08 5.45 5.45 0 0 0 1.16.1H142.06l-.4 2h-3.54a7.22 7.22 0 0 1-2.34-.32 3.16 3.16 0 0 1-2.2-2.4 8.6 8.6 0 0 1-.2-2v-1.1a9.13 9.13 0 0 1 .28-2.12 3.57 3.57 0 0 1 .77-1.55 3.37 3.37 0 0 1 1.48-1 7.34 7.34 0 0 1 2.36-.32 7 7 0 0 1 2.2.3 3.57 3.57 0 0 1 1.4.8 2.9 2.9 0 0 1 .74 1.23 5.18 5.18 0 0 1 .22 1.55v.4a6.34 6.34 0 0 1-.08 1.1 1.52 1.52 0 0 1-.27.68.9.9 0 0 1-.5.32 2.9 2.9 0 0 1-.73.08zm2.16-4.44a4.54 4.54 0 0 0-1.1.1 1.24 1.24 0 0 0-.66.4 1.6 1.6 0 0 0-.32.8 8 8 0 0 0-.08 1.24h4.3v-.46a4.12 4.12 0 0 0-.1-1 1.35 1.35 0 0 0-.34-.64 1.43 1.43 0 0 0-.66-.35 4.23 4.23 0 0 0-1-.1z" />
+            </g>
+            <path class="tagline__dash tagline__dash--second" d="M158.9 9.22l-9.1 3.5V10.5l6.48-2.4-6.48-2.4V3.48L158.9 7z" />
+            <g class="tagline__grow">
+              <path d="M177.3 7.2v5.7a2.47 2.47 0 0 1-.35 1.48 1.45 1.45 0 0 1-1.15.5h-3.54a10.68 10.68 0 0 1-3-.36 4.12 4.12 0 0 1-1.9-1.12 4.3 4.3 0 0 1-1-1.9 11.32 11.32 0 0 1-.3-2.76v-2a11.5 11.5 0 0 1 .3-2.68 4.16 4.16 0 0 1 1-1.93 4.52 4.52 0 0 1 2-1.16 10.8 10.8 0 0 1 3.14-.35H176.86L176.44 3h-4.1a8.6 8.6 0 0 0-1.77.15 2 2 0 0 0-1.08.57 2.3 2.3 0 0 0-.5 1.1 11.44 11.44 0 0 0-.14 2V8.7a10.42 10.42 0 0 0 .16 2 2.43 2.43 0 0 0 .54 1.18 1.85 1.85 0 0 0 1 .54 8.63 8.63 0 0 0 1.65.13h2.45V9.32h-2.42l.44-2.12z" />
+              <path d="M181.9 14.9h-2.6V8.06a4.5 4.5 0 0 1 .28-1.7 2.6 2.6 0 0 1 .82-1.1 3.44 3.44 0 0 1 1.32-.6 7.52 7.52 0 0 1 1.78-.2H185.86l-.42 2.16H183.76a3.3 3.3 0 0 0-1 .12 1.24 1.24 0 0 0-.56.35 1.1 1.1 0 0 0-.25.57 6 6 0 0 0 0 .83z" />
+              <path d="M191.56 4.18a9.4 9.4 0 0 1 2.28.24 3.42 3.42 0 0 1 1.54.8 3.3 3.3 0 0 1 .87 1.54 9 9 0 0 1 .27 2.4v1.08a9 9 0 0 1-.27 2.4 3.3 3.3 0 0 1-.87 1.53 3.4 3.4 0 0 1-1.54.8 9.33 9.33 0 0 1-2.28.25 9.43 9.43 0 0 1-2.3-.24 3.4 3.4 0 0 1-1.54-.8 3.27 3.27 0 0 1-.87-1.54 9 9 0 0 1-.27-2.4V9.16a9 9 0 0 1 .27-2.4 3.27 3.27 0 0 1 .87-1.53 3.42 3.42 0 0 1 1.54-.8 9.5 9.5 0 0 1 2.3-.25zm2.32 4.94a8.85 8.85 0 0 0-.1-1.5 1.83 1.83 0 0 0-.35-.86 1.23 1.23 0 0 0-.7-.4 5.58 5.58 0 0 0-1.17-.1 5.74 5.74 0 0 0-1.18.1 1.23 1.23 0 0 0-.7.4 1.84 1.84 0 0 0-.36.87 9 9 0 0 0-.1 1.5v1.17a8.8 8.8 0 0 0 .1 1.48 1.83 1.83 0 0 0 .35.86 1.22 1.22 0 0 0 .7.4 5.66 5.66 0 0 0 1.2.1 5.5 5.5 0 0 0 1.16-.1 1.22 1.22 0 0 0 .7-.4 1.82 1.82 0 0 0 .35-.86 8.67 8.67 0 0 0 .1-1.48z" />
+              <path d="M207.94 12.22l1.9-7.72h2.48l-3.08 10.4h-2.6l-1.82-7.26L203 14.9h-2.64l-3-10.4h2.62l1.8 7.68 2-7.68h2.36z" />
+            </g>
+          </g>
+        </svg>
+        <p class='home-intro__sentence'>Sucessfully bringing and building pioneering firms to the GCC.</p>
+      </div>
+    </div>
+  </section>
+  <section class="page" id="about">
+    <div class="page__container">
       <h2 class="page_heading">About</h2>
       <p>
         Almoayed Technologies deploys <b>specialist knowledge</b> and <b>strategic insight</b> to enable smooth entry of innovative technologies to the Middle East with a <b>de-risked business model.</b> We provide <b>in-depth regional knowledge</b> in how to bring products to market at speed in the right way, that has been proven through <b>generations of experience.</b>
       </p>
+    </div>
+  </section>
+  <section class="page" id="identify">
+    <div>
+      <h2 class="page_heading">Identify</h2>
+      <p class="big_text">
+        Our team, draws on generations of proven success to seek out businesses from around the world which would not only succeed within the GCC, but have a transformational effect on the people and businesses of the region.
+      </p>
+    </div>
+    <div>
+      <div class="wrapper" onclick="">
+        <div class="icon"></div>
+        <p class="text">
+          We partner with companies radically transforming the learning experience and effectiveness through innovative digital applications and services.
+        </p>
+      </div>
+      <div class="wrapper" onclick="">
+        <div class="icon"></div>
+        <p class="text">
+          We partner with companies radically transforming the efficient and effective collection and transportation of goods through innovative digital based technologies.
+        </p>
+      </div>
+      <div class="wrapper" onclick="">
+        <div class="icon"></div>
+        <p class="text">
+          We partner with companies challenging the way financial services are accessed and delivered through innovative delivery of digital based products, systems and services.
+        </p>
+      </div>
+      <div class="wrapper" onclick="">
+        <div class="icon"></div>
+        <p class="text">
+          We partner with companies radically transforming the safe and efficient delivery of health services through the application of transformative digital application.
+        </p>
+      </div>
+      <div class="wrapper" onclick="">
+        <div class="icon"></div>
+        <p class="text">
+          We partner with global innovative leaders looking to protect governments, companies and individuals in this increasingly challenging digital world.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="page" id="guide">
+    <div class="wrapper">
+      <h2 class="page_heading">Guide</h2>
+      <p class="big_text">
+        Having identified a solution to a local problem, the team approaches the company, outlining the opportunity and delivers a proven process.
+      </p>
+    </div>
+    <div class="wrapper">
+      <div class="panel" onclick="">
+        <div class="icon"></div>
+        <div class="text_wrapper">
+          <p class="text">
+            The team creates a JV which brings the company to the GCC. This group ensures a detailed de-risked roll out plan is devised, validated and amended using our local knowledge and supporting verticals.
+          </p>
+        </div>
+      </div>
+      <div class="panel" onclick="">
+        <div class="icon"></div>
+        <div class="text_wrapper">
+          <p class="text">
+            Utilising extensive local knowledge, the legal team then helps to secure all required regulatory approvals and permits to enable the solution to be marketed, sold and operated efficiently.
+          </p>
+        </div>
+      </div>
+      <div class="panel" onclick="">
+        <div class="icon"></div>
+        <div class="text_wrapper">
+          <p class="text">
+            Generations of trading experience of the Almoayed family is brought to bear to validate offerings and to ensure that the plans are fit for purpose for regional expansion.
+          </p>
+        </div>
+      </div>
+      <div class="panel" onclick="">
+        <div class="icon"></div>
+        <div class="text_wrapper">
+          <p class="text">
+            The extensive network of contacts and businesses across the region allows a full development plan to be implemented that precisely fits each market and product or service.
+          </p>
+        </div>
+      </div>
+      <div class="panel" onclick="">
+        <div class="icon"></div>
+        <div class="text_wrapper">
+          <p class="text">
+            Through our Venture Capital Platform, Almoayed Technologies capitalizes with its partnerships to ensure the roll out is fully funded and successfully reaches the desired end user.
+          </p>
+        </div>
+      </div>
+      <div class="panel" onclick="">
+        <div class="icon"></div>
+        <div class="text_wrapper">
+          <p class="text">
+            Our local HR team ensures that the JV is resourced with the optimum level of people and skill sets to ensure a smooth launch and growth of the organisation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="page" id="grow">
+    <div class="wrapper">
+      <h2 class="page_heading">Grow</h2>
+      <p class="big_text">
+        Our in depth knowledge and expertise of all aspects of the regional market, means that businesses from outside the region, adapt and thrive quickly in this burgeoning, developing and exciting economy.
+      </p>
+    </div>
+  </section>
+  <span id="contact"></span>
+  <!-- CREATES ANCHOR FOR FIXED POSITION HFOOTER AT VERY END OF DOCUMENT -->
+  <section class="footer" id="pageFooter">
+    <div>
       <p>
-        <span class="big_text"><b>Gulf Cooperation Council (GCC) - Significant untapped opportunity in a digital region</b></span>
+        Looking to move your tech </br>
+        business to the middle east?
       </p>
       <p>
-        The GCC has one of the fastest-growing populations in the world. By 2020, it is estimated that the Gulf will have well over 36 million consumers and an economy worth over $2 trillion. The majority of the population will be under 25 years of age, increasingly well-educated, and all of the digital age. With smartphone penetration already higher than in the USA, demand for mobile data, applications and digital services presents significant opportunities for the new generation of digital pioneers. 
-      </p>
-    </section>
-    <section class="page" id="identify">
-      <div>
-        <h2 class="page_heading">Identify</h2>
-        <p class="big_text">
-          Trading instincts are embedded in the family DNA through millennia, members of the family have always been encouraged to develop their education all over the world and to travel extensively with an open mind.
-        </p>
-        <p>
-          This means that the family is always seeking businesses from any part of the world which could make a commercial impact in the region. This Almoayed Instinct drives the whole business and is based on knowledge of what already exists and what would be well received. This has led to the establishment of partnerships with pioneer after pioneer in the Gulf as we build out their businesses successfully. 
-        </p>
-      </div>
-      <div>
-        <div class="wrapper">
-          <div class="icon"></div>
-          <p class="text">
-             Looking to partner with companies radically transforming the learning experience and effectiveness through innovative digital applications and services.
-          </p>
-        </div>
-        <div class="wrapper">
-          <div class="icon"></div>
-          <p class="text">
-            Looking to partner with companies radically transforming the efficient and effective collection and transportation of goods through innovative digital based technologies.
-          </p>
-        </div>
-        <div class="wrapper">
-          <div class="icon"></div>
-          <p class="text">
-            Looking to partner with companies challenging the way financial services are accessed and delivered through innovative delivery of digital based products, systems and services.
-          </p>
-        </div>
-        <div class="wrapper">
-          <div class="icon"></div>
-          <p class="text">
-            Looking to partner with companies radically transforming the safe and efficient delivery of health services through the application of transformative digital application.
-          </p>
-        </div>
-        <div class="wrapper">
-          <div class="icon"></div>
-          <p class="text">
-            Looking to partner with global innovative leaders looking to protect governments, companies and individuals in this increasingly challenging digital world.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="page" id="guide">
-      <div class="wrapper">
-        <h2 class="page_heading">Guide</h2>
-        <p class="big_text">
-          Having identified a solution to a local problem, the team would approach the company, outlining the opportunity and delivering a proven process as follows:
-        </p>
-      </div>
-      <div class="wrapper">
-        <div class="panel">
-          <div class="icon"></div>
-          <div class="text_wrapper">
-            <p class="text">
-             The team would create a JV which will bring the company to the GCC. This group would ensure a detailed de-risked roll out plan is devised, validated and amended using our local knowledge and supporting verticals.
-            </p>
-          </div>
-        </div>
-        <div class="panel">
-          <div class="icon"></div>
-          <div class="text_wrapper">
-            <p class="text">
-              Utilising extensive local knowledge, the legal team would then help to secure all required regulatory approvals and permits to enable the solution to be marketed, sold and operated efficiently.
-            </p>
-          </div>
-        </div>
-        <div class="panel">
-          <div class="icon"></div>
-          <div class="text_wrapper">
-            <p class="text">
-              The generations of trading experience of the Almoayed family is brought to bear to validate offerings and to amend to ensure that the plans are fit for purpose for regional expansion.
-            </p>
-          </div>
-        </div>
-        <div class="panel">
-          <div class="icon"></div>
-          <div class="text_wrapper">
-            <p class="text">
-              The extensive network of contacts and businesses across the region allows a full development plan to be developed and implemented to precisely fit each market and product or service on offer.
-            </p>
-          </div>
-        </div>
-        <div class="panel">
-          <div class="icon"></div>
-          <div class="text_wrapper">
-            <p class="text">
-              Through our Venture Capital Platform, Almoayed would capitalize with its partnerships to ensure the roll out is fully funded and successfully reaching the desired end user.
-            </p>
-          </div>
-        </div>
-        <div class="panel">
-          <div class="icon"></div>
-          <div class="text_wrapper">
-            <p class="text">
-              Our local based HR team ensures that the JV is resourced with the optimum level of people and skill sets to ensure a smooth launch and growth of the organisation.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="page" id="grow">
-      <div class="wrapper">
-        <h2 class="page_heading">Grow</h2>
-        <p class="big_text">
-          The Marketing and Communication team would then review and amend the plans, again in light of the above stages and extensive local knowledge of the markets and potential customers or clients. This will ensure the smooth launch and growth of each and every JV the company enters into.
-        </p>
-        <p>
-          This would include localisation of all marketing, communications content, governance, sales, and servicing requirements. 
-        </p>
-        <p>
-          This is all conducted in a transparent and open way with the business we are JVing with to ensure a smooth long term and mutually beneficial relationship, with minimum risks being exposed to the originating business.
-        </p>
-      </div>
-    </section>
-
-    <span id="contact"></span> <!-- CREATES ANCHOR FOR FIXED POSITION HFOOTER AT VERY END OF DOCUMENT -->
-    
-    <section class="footer" id="pageFooter">
-      <div>
-        <p>
-          Looking to move your tech </br>
-          business to the middle east?
-        </p>
-        <p>
-          <a class="email" href="mailto:info@almoayedtechnologies.com"> 
+        <a class="email" href="mailto:info@almoayedtechnologies.com"> 
             info@almoayedtechnologies.com
           </a>
-        </p>
-        <a class="linkedin" href="https://bh.linkedin.com/company/almoayed-technologies" target="_blank"></a>
-      </div>
-      <div>
-        <p>
-          &#9400; 2017 Almoayed Technologies
-        </p>
-        <p>
-          Designed by Interstate Creative Partners
-        </p>
-      </div>
-    </section>
+      </p>
+      <a class="linkedin" href="https://bh.linkedin.com/company/almoayed-technologies" target="_blank"></a>
+    </div>
+    <div>
+      <p>
+        &#9400; 2017 Almoayed Technologies
+      </p>
+      <p>
+        Designed by Interstate Creative Partners
+      </p>
+    </div>
+  </section>
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+  (function(b, o, i, l, e, r) {
+    b.GoogleAnalyticsObject = l;
+    b[l] || (b[l] =
+      function() {
+        (b[l].q = b[l].q || []).push(arguments) });
+    b[l].l = +new Date;
+    e = o.createElement(i);
+    r = o.getElementsByTagName(i)[0];
+    e.src = 'https://www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e, r)
+  }(window, document, 'script', 'ga'));
+  ga('create', 'UA-106856601-1');
+  ga('send', 'pageview');
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-106856601-1');ga('send','pageview');
-    </script>
+  </script>
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/lazysizes/lazysizes.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-    
-    <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
-  </body>
 </html>

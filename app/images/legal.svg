@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.29 34.61"><defs><style>.cls-1{fill:#ffffff;}</style></defs><title>legal</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="4.24 15.55 20.86 15.53 21.68 14.23 4.24 14.23 4.24 15.55"/><path class="cls-1" d="M25,1.36V9L19.89,3.15l-.22,1.76L23,8.74l-5.9.07,1-5.74.21-1.76-1-1.17V0H0V34.61H26.29V.6ZM1.32,33.29v-32H17l-1.47,8.82L25,10V33.29Z"/><polygon class="cls-1" points="4.24 20.4 20.86 20.39 21.68 19.09 4.24 19.09 4.24 20.4"/><polygon class="cls-1" points="4.24 25.26 20.86 25.24 21.68 23.94 4.24 23.94 4.24 25.26"/><polygon class="cls-1" points="4.24 30.11 20.86 30.1 21.68 28.8 4.24 28.8 4.24 30.11"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.3 34.6">
+  <g fill="#fff">
+    <path d="M4.2 15.5h16.7l.8-1.3H4.2"/>
+    <path d="M19.9 3.1l-.2 1.8 4.6 3.8-7.2.1 1-5.7.2-1.8-1-1.2V0H0v34.6h26.3V8.9l-6.4-5.8zM1.3 33.3v-32H17l-1.5 8.8L25 10v23.3H1.3z"/>
+    <path d="M4.2 20.4h16.7l.8-1.3H4.2"/>
+    <path d="M4.2 25.3l16.7-.1.8-1.3H4.2"/>
+    <path d="M4.2 30.1h16.7l.8-1.3H4.2"/>
+  </g>
+</svg>
